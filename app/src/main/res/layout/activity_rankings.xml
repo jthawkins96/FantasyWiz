@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="eduinfo_capstone_2018team_07.iu.httpsgithub.capstonetemplate.RankingsActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/wizbar">
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/navbar"
+        android:layout_below="@id/toolbar">
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:text="Home"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/rankBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:text="RANKINGS"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/newsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:text="NEWS"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/profileBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:text="PROFILE"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/searchBar"
+        android:layout_below="@+id/navbar">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="5">
+
+        </android.support.v7.widget.SearchView>
+
+        <TextView
+            android:id="@+id/filterTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ALL"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/filterBar"
+        android:layout_below="@+id/searchBar">
+
+        <Button
+            android:id="@+id/ALL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ALL"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/QB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ALL"
+            android:layout_weight="1"
+            android:text="QB"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/RB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/QB"
+            android:layout_weight="1"
+            android:text="RB"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/WR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/RB"
+            android:layout_weight="1"
+            android:text="WR"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/TE"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/WR"
+            android:layout_weight="1"
+            android:text="TE"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/DST"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/TE"
+            android:layout_weight="1"
+            android:text="DST"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/K"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/DST"
+            android:layout_weight="1"
+            android:text="K"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_below="@id/filterBar">
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:layout_below="@+id/filterBar"
+        android:layout_weight="5">
+    </ListView>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listView"
+        android:text="COMPARE PLAYERS"
+        android:id="@+id/compareBtn"
+        android:layout_weight="1"/>
+</LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text="No Results Found"
+        android:id="@+id/noData"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text="Server Offline"
+        android:id="@+id/noServer"/>
+
+
+</RelativeLayout>
